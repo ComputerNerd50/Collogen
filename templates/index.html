@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Collection Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+  <header>
+    <input type="text" id="myInput" value="" disabled />
+    <button onclick="enableInput(this)" class="but">Enable Input</button>
+    <a href="https://www.w3schools.com/html/">Visit our HTML tutorial</a>
+  </header>
+
+  <form id="add-item-form" method="POST" action="/">
+    <h2>Add New Item</h2>
+    <label><h6>Item Name</h6></label><br>
+    <input type="text" id="item-name" placeholder="Item Name" name="name" class="form" required><br>
+
+    <label><h6>Company/Producer</h6></label><br>
+    <input type="text" id="item-category" placeholder="Company/ Producer" name="category" class="form"><br>
+
+    <label><h6>Value/Worth</h6></label><br>
+    <input type="text" id="item-value" placeholder="Value (e.g., $10)" name="value" class="form"><br>
+
+    <label><h6>Notes</h6></label><br>
+    <textarea id="item-description" placeholder="Description or notes" name="description" class="form"></textarea><br>
+
+    <button type="submit">Add to Collection</button>
+  </form>
+
+  <div class="container">
+      <div class="collection-grid">
+        {% for i in collection.item %}
+          <div class="item-card card p-3 my-2 border shadow-sm">
+              <h5 class="card-title">{{i.name}}</h5>
+              <p class="card-text">{{i.category}}</p>
+              <p class="card-text">{{i.value}}</p>
+              <p class="card-text">{{i.description}}</p>
+          </div>
+        {% endfor %}
+      </div>
+  </div>
+
+  <script>
+
+    window.addEventListener("load", function () {
+    if (performance.navigation.type === 1) {
+     
+      window.location.href = "/"; 
+    }
+   
+    const enableInput = (button) => {
+      document.getElementById("myInput").disabled = false;
+      if (document.getElementById("myInput").disabled == false) {
+        button.innerHTML = "Fix";
+      }
+
+      else {
+        button.innerHTML = "Edit";
+      }
+    };
+  </script>
+</body>
+</html>
