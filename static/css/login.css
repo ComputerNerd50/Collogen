@@ -1,0 +1,213 @@
+body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none;
+      }
+
+      header {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 10;
+      }
+
+      header nav h1 {
+        font-weight: bolder;
+        color: #0078d7;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      header button {
+        background: #0078d7;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+      }
+
+      header button:hover {
+        background: #005ea0;
+      }
+
+      header button.active {
+        background: #005ea0;
+      }
+
+      .container, .container2 {
+        background-color: #0078d7;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        z-index: 1;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 8%;
+        gap: 6%;
+        overflow: hidden;
+        transition: width 0.5s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .container.expanded, .container2.expanded {
+        background-color: #0078d7;
+        width: 100%;
+      }
+
+      h1 {
+          font-weight: bolder;
+      }
+
+      a {
+          color: white;
+      }
+
+      .alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    }
+
+    .alert-danger {
+        z-index: 1;
+        color: #721c24;
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+    }
+
+    .alert-success {
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+    }
+
+      .login-form, .signup-form {
+        width: 320px;
+        background: #ffffffcc;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        animation: fadeInUp 0.8s ease;
+        order: 2;
+      }
+
+      .login-form h2, .signup-form h2 {
+        margin-bottom: 1.5rem;
+        color: #4a4a4a;
+      }
+
+      .login-form label, .signup-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-top: 1rem;
+        font-weight: 500;
+      }
+
+      .login-form input, .signup-form input {
+        width: 100%;
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.3s;
+        box-sizing: border-box;
+      }
+
+      .login-form input:focus, .signup-form input:focus {
+        border-color: #0078d7;
+      }
+
+      .login-form button, .signup-form button {
+        margin-top: 1.5rem;
+        padding: 0.7rem;
+        width: 100%;
+        background-color: #0078d7;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .login-form button:hover, .signup-form button:hover {
+        background-color: #005ea0;
+      }
+
+      .login-message, .signup-message {
+        background-color: #0078d7;
+        border-radius: 0px 20px 0 20px;
+        display: flex;
+        height: 100vh;
+        width: 50vw;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        max-width: 50vw;
+        max-height: 100vh;
+        animation: fadeIn 1.2s ease;
+        order: 1;
+      }
+
+      .container2 {
+        background-color: #0078d7;
+        justify-content: flex-start;
+        padding-left: 8%;
+        padding-right: 0;
+      }
+
+      .signup-form {
+        order: 1;
+      }
+
+      .signup-message {
+        order: 2;
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          transform: translateY(30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .link-button {
+        background: none;
+        border: none;
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: inherit;
+      }
+
+      .link-button:hover {
+        background: none;
+        color: #cce7ff;
+      }
